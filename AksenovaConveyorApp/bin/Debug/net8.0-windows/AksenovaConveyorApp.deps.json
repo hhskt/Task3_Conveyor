@@ -1,0 +1,39 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "AksenovaConveyorApp/1.0.0": {
+        "dependencies": {
+          "AksenovaConveyorLib": "1.0.0"
+        },
+        "runtime": {
+          "AksenovaConveyorApp.dll": {}
+        }
+      },
+      "AksenovaConveyorLib/1.0.0": {
+        "runtime": {
+          "AksenovaConveyorLib.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "AksenovaConveyorApp/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "AksenovaConveyorLib/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

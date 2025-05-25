@@ -1,0 +1,78 @@
+<Window x:Class="AksenovaConveyorApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="clr-namespace:AksenovaConveyorApp.ViewModels"
+        Title="Aksenova Conveyor Task" Height="600" Width="800">
+    <Window.DataContext>
+        <vm:MainViewModel/>
+    </Window.DataContext>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal" Margin="10">
+            <Button Content="Add Conveyor" Command="{Binding AddConveyorCommand}" Margin="5"/>
+            <Button Content="Start All" Command="{Binding StartAllCommand}" Margin="5"/>
+            <Button Content="Stop All" Command="{Binding StopAllCommand}" Margin="5"/>
+        </StackPanel>
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+            <ItemsControl ItemsSource="{Binding Conveyors}" Margin="10">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Border BorderBrush="Gray" BorderThickness="1" Margin="5">
+                            <Grid Height="120">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="250"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Canvas Background="LightGray">
+                                    <Rectangle x:Name="ConveyorPart" Width="20" Height="20" Fill="Blue" 
+                                           Canvas.Left="{Binding Position}" Canvas.Top="40" Opacity="1">
+                                        <Rectangle.Style>
+                                            <Style TargetType="Rectangle">
+                                                <Setter Property="Opacity" Value="0"/>
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding TriggerAnimation}" Value="True">
+                                                        <DataTrigger.EnterActions>
+                                                            <BeginStoryboard x:Name="ConveyorAnimation">
+                                                                <Storyboard>
+                                                                    <DoubleAnimation Storyboard.TargetProperty="(Canvas.Left)"
+                                                                                 From="0" To="230" Duration="0:0:0.4"/>
+                                                                    <DoubleAnimation Storyboard.TargetProperty="Opacity"
+                                                                                 From="1" To="0" Duration="0:0:0.2" 
+                                                                                 BeginTime="0:0:0.3"/>
+                                                                </Storyboard>
+                                                            </BeginStoryboard>
+                                                        </DataTrigger.EnterActions>
+                                                        <DataTrigger.ExitActions>
+                                                            <StopStoryboard BeginStoryboardName="ConveyorAnimation"/>
+                                                        </DataTrigger.ExitActions>
+                                                    </DataTrigger>
+                                                    <DataTrigger Binding="{Binding IsRunning}" Value="False">
+                                                        <DataTrigger.EnterActions>
+                                                            <StopStoryboard BeginStoryboardName="ConveyorAnimation"/>
+                                                        </DataTrigger.EnterActions>
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Rectangle.Style>
+                                    </Rectangle>
+                                    <TextBlock Text="Conveyor Belt" Canvas.Left="100" Canvas.Top="10"/>
+                                </Canvas>
+
+                                <StackPanel Grid.Column="1" Margin="10">
+                                    <TextBlock Text="{Binding Id, StringFormat='Conveyor {0}'}" FontWeight="Bold"/>
+                                    <TextBlock Text="{Binding Status}"/>
+                                    <TextBlock Text="{Binding MechanicName, StringFormat='Mechanic: {0}'}" Margin="0,5,0,0"/>
+                                </StackPanel>
+                            </Grid>
+                        </Border>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </ScrollViewer>
+    </Grid>
+</Window>

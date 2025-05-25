@@ -1,0 +1,11 @@
+D:\Dev\repos\AksenovaConveyorTask\AksenovaConveyorLib\bin\Debug\net8.0\AksenovaConveyorLib.deps.json
+D:\Dev\repos\AksenovaConveyorTask\AksenovaConveyorLib\bin\Debug\net8.0\AksenovaConveyorLib.dll
+D:\Dev\repos\AksenovaConveyorTask\AksenovaConveyorLib\bin\Debug\net8.0\AksenovaConveyorLib.pdb
+D:\Dev\repos\AksenovaConveyorTask\AksenovaConveyorLib\obj\Debug\net8.0\AksenovaConveyorLib.GeneratedMSBuildEditorConfig.editorconfig
+D:\Dev\repos\AksenovaConveyorTask\AksenovaConveyorLib\obj\Debug\net8.0\AksenovaConveyorLib.AssemblyInfoInputs.cache
+D:\Dev\repos\AksenovaConveyorTask\AksenovaConveyorLib\obj\Debug\net8.0\AksenovaConveyorLib.AssemblyInfo.cs
+D:\Dev\repos\AksenovaConveyorTask\AksenovaConveyorLib\obj\Debug\net8.0\AksenovaConveyorLib.csproj.CoreCompileInputs.cache
+D:\Dev\repos\AksenovaConveyorTask\AksenovaConveyorLib\obj\Debug\net8.0\AksenovaConveyorLib.dll
+D:\Dev\repos\AksenovaConveyorTask\AksenovaConveyorLib\obj\Debug\net8.0\refint\AksenovaConveyorLib.dll
+D:\Dev\repos\AksenovaConveyorTask\AksenovaConveyorLib\obj\Debug\net8.0\AksenovaConveyorLib.pdb
+D:\Dev\repos\AksenovaConveyorTask\AksenovaConveyorLib\obj\Debug\net8.0\ref\AksenovaConveyorLib.dll
